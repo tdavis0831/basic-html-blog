@@ -42,22 +42,22 @@ color: white;
 <p class="blue-text">My second paragraph.</p>
 <p class="blue-text">My third paragraph.</p>
 <form>
-<button onclick="triggerAlert()">Add Post</button>
-<input type="submit" value="Submit">
-</form>
-
-
-<label for="title"> Tile </label>
-<input type="text">
+    <div>
+<label for="new-article-title">New Article Title</label>
+<input id="new-article-title" type="text" />
+    </div>
 <label for="content">Content</label>
-<textarea for="content">  </textarea>
-
+<textarea id="content">Enter Article Content Here</textarea>
+<button id="addButton" onclick="triggerAddButton()">Add Post</button>
+</form>
 <button id="delete-button" onclick="triggerAlert()">Delete Post</button>
-
 
 <script>
 
-console.log(`Hello, World`);
+//4. make a function called addPost or similar and make it run when you click the submit button. use the document API to select the form inputs and store them in javascript variables then log them to the console or make them appear in an alert.
+//5. now that you have the post data in your javascript variables, update the addPost function so that it will use the document API to append an HTML article tag that contains a heading and paragraph based on the post data.
+//6. make a function called deleteLastPost and bind it to the delete button. it should delete the most recently added article, and if there are not any articles then it shouldn't do anything (or you can make it alert and say something like "no articles were deleted because no articles were found"
+//7. add two posts in the raw html that exists on page load. make these non-fiction: actually describe two things you have learned about programming so far.
 
 //Add a button to trigger alert
 //Add a form to append and delete blod posts
@@ -65,8 +65,15 @@ console.log(`Hello, World`);
 function triggerAlert(){
 alert(`Hello, World`);
 }
+var addButton = document.getElementById('addButton');
+console.log(addButton)
+const newArticleTitleInput = document.getElementById('new-article-title');
+const newArticleTitle = newArticleTitleInput.value;
 
-function addPost
+function triggerAddButton(){
+    console.log(addButton);
+}
+
 </script>
 </body>
 
