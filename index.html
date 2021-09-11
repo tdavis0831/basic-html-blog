@@ -6,20 +6,24 @@
 
 h1{
 
-color:rgba(197, 222, 230,0.95);
-}
-p{
-font-style: italic;
-}
-#paragraph1{
-color:green;
+color:rgba(211, 56, 231, 0.95);
+text-align: center;
+  
 }
 
+#paragraph1{
+color:green;
+
+}
+#sub{text-align: center;
+    font-size: ;
+}
 .blue-text{
-color:blue;
+color:rgb(143, 193, 235);
+
 }
 body{
-background-color: lightyellow;
+background-color: rgb(239, 240, 183);
 }
 
 #delete-button{
@@ -37,10 +41,11 @@ color: white;
 
 <body>
 
-<h1>My First Heading</h1>
-<p id="paragraph1">My first paragraph.</p>
-<p class="blue-text">My second paragraph.</p>
-<p class="blue-text">My third paragraph.</p>
+<h1>Terminal Talk</h1>
+<div>
+<p id="paragraph1"></p>
+<p id="sub" class="blue-text">console.log('thoughts')</p>
+</div>
 <form  onsubmit="triggerAddButton(event)">
     <div>
 <label for="new-article-title">New Article Title</label>
@@ -58,8 +63,7 @@ color: white;
 
 <script>
 
-//4. make a function called addPost or similar and make it run when you click the submit button. use the document API to select the form inputs and store them in javascript variables then log them to the console or make them appear in an alert.
-//5. now that you have the post data in your javascript variables, update the addPost function so that it will use the document API to append an HTML article tag that contains a heading and paragraph based on the post data.
+
 //6. make a function called deleteLastPost and bind it to the delete button. it should delete the most recently added article, and if there are not any articles then it shouldn't do anything (or you can make it alert and say something like "no articles were deleted because no articles were found"
 //7. add two posts in the raw html that exists on page load. make these non-fiction: actually describe two things you have learned about programming so far.
 
