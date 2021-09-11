@@ -77,16 +77,28 @@ alert(`Hello, World`);
 function triggerAddButton(event){
     const newArticleTitleInput = document.getElementById('new-article-title');
     const newArticleTitleText = newArticleTitleInput.value;
+    
     const newArticleContent = document.getElementById('content');
     const newArticleContentText=newArticleContent.value;
+    
     const elBlogArticleSection = document.getElementById('blog-article-section')
+ 
     const elNewTitle=document.createElement("h3");
-
+    const elNewContent=document.createElement("p");
+    
+    
     event.preventDefault();
     console.log(newArticleTitleText);
     console.log(newArticleContentText);
+
+
     elNewTitle.innerText = newArticleTitleText;
-    elBlogArticleSection.append(elNewTitle)
+    elBlogArticleSection.append(elNewTitle);
+
+    
+    elNewContent.innerText = newArticleContentText;
+    elBlogArticleSection.append(elNewContent);
+
 
     
 }
