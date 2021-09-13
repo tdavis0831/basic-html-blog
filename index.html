@@ -46,7 +46,7 @@ color: white;
 <p id="paragraph1"></p>
 <p id="sub" class="blue-text">console.log('thoughts')</p>
 </div>
-<form  onsubmit="triggerAddButton(event)">
+<form   onsubmit="triggerAddButton(event)">
     <div>
 <label for="new-article-title">New Article Title</label>
 <input id="new-article-title" type="text" />
@@ -55,25 +55,15 @@ color: white;
 <textarea id="content">Enter Article Content Here</textarea>
 <button id="addButton" >Add Post</button>
 </form>
-<button id="delete-button" onclick="triggerAlert()">Delete Post</button>
+<button id="delete-button" onclick="deleteLastPost()">Delete Post</button>
+
+<h2>My Blog Articles</h2>
 
 <section id="blog-article-section">
-    <h2>My Blog Articles</h2>
+   
 </section>
 
 <script>
-
-
-//6. make a function called deleteLastPost and bind it to the delete button. it should delete the most recently added article, and if there are not any articles then it shouldn't do anything (or you can make it alert and say something like "no articles were deleted because no articles were found"
-//7. add two posts in the raw html that exists on page load. make these non-fiction: actually describe two things you have learned about programming so far.
-
-//Add a button to trigger alert
-//Add a form to append and delete blod posts
-
-function triggerAlert(){
-alert(`Hello, World`);
-}
-
 
 
 
@@ -102,10 +92,20 @@ function triggerAddButton(event){
     
     elNewContent.innerText = newArticleContentText;
     elBlogArticleSection.append(elNewContent);
-
-
     
 }
+
+function deleteLastPost(el){
+var deletePost = document.getElementById('blog-article-section');
+    deletePost.remove();
+
+}
+//6. make a function called deleteLastPost and bind it to the delete button. it should delete the most recently added article, and if there are not any articles then it shouldn't do anything (or you can make it alert and say something like "no articles were deleted because no articles were found"
+//7. add two posts in the raw html that exists on page load. make these non-fiction: actually describe two things you have learned about programming so far.
+
+//Add a button to trigger alert
+//Add a form to append and delete blod posts
+
 
 </script>
 </body>
