@@ -16,7 +16,7 @@ color:green;
 
 }
 #sub{text-align: center;
-    font-size: ;
+    font-size: 1rem ;
 }
 .blue-text{
 color:rgb(143, 193, 235);
@@ -79,6 +79,7 @@ function triggerAddButton(event){
  
     const elNewTitle=document.createElement("h3");
     const elNewContent=document.createElement("p");
+    const elNewArticle=document.createElement("article")
     
     
     event.preventDefault();
@@ -87,17 +88,19 @@ function triggerAddButton(event){
 
 
     elNewTitle.innerText = newArticleTitleText;
-    elBlogArticleSection.append(elNewTitle);
-
-    
     elNewContent.innerText = newArticleContentText;
-    elBlogArticleSection.append(elNewContent);
     
+    
+    elNewArticle.append(elNewTitle);
+    elNewArticle.append(elNewContent);
+    elBlogArticleSection.append(elNewArticle);
 }
 
 function deleteLastPost(el){
-var deletePost = document.getElementById('blog-article-section');
-    deletePost.remove();
+const blogArticleSection = document.getElementById('blog-article-section');
+const articles = blogArticleSection.getElementsByTagName('article')
+const lastArticle = articles[articles.length - 1]
+    lastArticle.remove();
 
 }
 //6. make a function called deleteLastPost and bind it to the delete button. it should delete the most recently added article, and if there are not any articles then it shouldn't do anything (or you can make it alert and say something like "no articles were deleted because no articles were found"
